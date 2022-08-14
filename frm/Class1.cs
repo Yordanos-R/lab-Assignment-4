@@ -8,7 +8,9 @@ namespace frm
 {
     internal class Class1
     {
-       
+        public static List<Class1> c = new List<Class1>();
+        public static List <String> checkedBox = new List<string>();
+
         public string objName { get; set; }
         public string fName { get; set; }
         public string mName { get; set; }
@@ -16,12 +18,18 @@ namespace frm
         public string dob { get; set; }
         public string dor { get; set; }
         public string phone { get; set; }
+       
+        
         public void save() 
         {
-            Console.WriteLine("Saved");
+          
+            c.Add(this);
         }
 
-
+        public static List<Class1> getall()
+        {
+            return c;
+        }
 
 
     }
