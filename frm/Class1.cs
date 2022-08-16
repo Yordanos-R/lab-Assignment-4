@@ -24,6 +24,7 @@ namespace frm
         {
           
             c.Add(this);
+            Console.WriteLine("Saved successfully!");
         }
 
         public static List<Class1> getall()
