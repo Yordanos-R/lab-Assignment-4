@@ -1,0 +1,4 @@
+﻿Build started...
+1>------ Build started: Project: frm, Configuration: Debug Any CPU ------
+1>  frm -> C:\Users\Yordi\source\repos\Yordanos-R\lab-Assignment-4\frm\bin\Debug\frm.exe
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========

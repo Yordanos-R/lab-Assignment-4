@@ -16,77 +16,37 @@ namespace frm
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
+            dataGridView2.DataSource = null;
+            dataGridView2.DataSource = Class1.getall();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Class1 c = new Class1();
-            c.fName = txtName.Text;
-            c.lName = txtMName.Text;
-            c.lName = txtLName.Text;
-            c.phone = txtPhone.Text;
-            Regex r = new Regex(@"^[a-z]+-@-[a-z]+-.[a-z]{3}$");
-            if (r.IsMatch(txtEmail.Text))
-            {
-                //c.save();
-                errorProvider1.Clear();
-            }
-            else
-            {
-                errorProvider1.SetError(txtEmail, "Invalid input");
-                //MessageBox.Show("Invalid input");
-            }
-            // c.save();
-            if (string.IsNullOrEmpty(txtName.Text))
-            {
-                MessageBox.Show("Name is required!");
-            }
-            else if (string.IsNullOrEmpty(txtLName.Text))
-            {
-                MessageBox.Show("Last name is required!");
-            }
-
-                try
-                {
-                    int a = int.Parse(txtPhone.Text);
+        try{
+               Class1 c = new Class1
+                    {
+                        fName = txtName.Text,
+                        mName = txtMName.Text,
+                        lName = txtLName.Text,
+                        dob = dateTimePicker2.Text,
+                        dor = dateTimePicker1.Text,
+                        phone = txtPhone.Text,
+                        email = txtEmail.Text
+                    };
+                    c.save();
+                    dataGridView2.DataSource = null;
+                    dataGridView2.DataSource = Class1.getall();
                 }
-                catch (Exception)
+                catch(Exception ex)
                 {
-                    MessageBox.Show("INVALID INPUT");
-                }
-
-                       c.save();
-                       dataGridView2.DataSource = null;
-                       dataGridView2.DataSource = Class1.getall();
-
-
-            //MessageBox.Show("Student successfully added!");
-
+                    MessageBox.Show(ex.Message);
+                };
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
+            System.Environment.Exit(0);
         }
     }
 }
+

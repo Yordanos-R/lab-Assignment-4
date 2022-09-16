@@ -26,13 +26,14 @@ namespace frm
         {
             if (txtUsername.Text == "admin" && txtPassw.Text == "admin")
             {
-                Form1 f = new Form1();
+                Menu f = new Menu();
                 f.Show(this);
+                this.Hide();
 
             }
             else 
             {
-                (MessageBox.Show("Invalid username or password"); 
+                MessageBox.Show("Invalid username or password"); 
             }
         }
     }
